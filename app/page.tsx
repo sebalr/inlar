@@ -27,7 +27,7 @@ import { z } from 'zod';
 const INLAR = {
 	whatsapp: '5491100000000', // E.164 sin +
 	whatsappMsg: 'Hola INLAR, me gustaría hacer una consulta.',
-	calendlyUrl: 'https://calendly.com/tu-usuario/consulta-inlar',
+	googleSchedulerUrl: 'https://calendar.google.com/calendar/u/0/appointments/schedules/TU_SCHEDULE_ID',
 	email: 'contacto@inlar.com.ar',
 	telefono: '+54 9 11 0000-0000',
 	direccion: 'Buenos Aires, Argentina',
@@ -346,10 +346,21 @@ function Agenda() {
 					<div className="overflow-hidden rounded-2xl border border-inlar-cream/10 bg-inlar-cream shadow-2xl">
 						<iframe
 							title="Agendar consulta con INLAR"
-							src={INLAR.calendlyUrl}
+							src={INLAR.googleSchedulerUrl}
 							className="h-[640px] w-full"
 							loading="lazy"
 						/>
+						<div className="border-t border-inlar-cream-2/70 bg-inlar-cream px-5 py-4 text-sm text-inlar-ink/75">
+							Si no se carga el calendario, podés{' '}
+							<a
+								href={INLAR.googleSchedulerUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="font-semibold text-inlar-primary underline-offset-2 hover:underline">
+								abrir la agenda en una pestaña nueva
+							</a>
+							.
+						</div>
 					</div>
 				</div>
 			</div>

@@ -47,16 +47,17 @@ inlar-web/
 
 ---
 
-
 ## Archivos
 
 ### Landing
+
 - `app/page.tsx` — landing completa (client component)
 - `app/layout.tsx` — metadata, fonts (`next/font/google`), JSON-LD, `lang="es-AR"`
 - `app/api/contact/route.ts` — endpoint del formulario (TODO: conectar Resend / Nodemailer)
 - `tailwind.config.ts` — extensión con paleta `inlar.*` y familias
 
 ### Keystatic (blog)
+
 - `keystatic.config.ts` — schema de la colección `posts` + storage (`local` | `github`)
 - `app/keystatic/keystatic.ts` — Admin UI (client)
 - `app/keystatic/layout.tsx` — layout del admin
@@ -80,7 +81,7 @@ inlar-web/
 4. En `app/globals.css` asegurate de tener las `@tailwind` directives y el fondo `bg-inlar-cream`.
 5. Reemplazá los placeholders en `app/page.tsx`:
    - `INLAR.whatsapp` — número en formato E.164 sin `+` (ej: `5491155551234`)
-   - `INLAR.calendlyUrl` — link de tu Calendly
+   - `INLAR.googleSchedulerUrl` — link de Google Appointment Schedules
    - `INLAR.email`, `INLAR.telefono`, `INLAR.direccion`, redes sociales
    - Imágenes (`HERO_IMG`, `NOSOTRAS_IMG`) por fotos reales
 
