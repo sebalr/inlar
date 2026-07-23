@@ -10,6 +10,7 @@ yarn.lock
 out
 dist
 build
+.open-next
 
 # Environment variables
 .env
