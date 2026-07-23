@@ -1,0 +1,47 @@
+{
+  "name": "inlar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.1.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "@keystar/ui": "^0.8.0",
+    "@markdoc/markdoc": "^0.5.8",
+    "lucide-react": "^1.25.0",
+    "next": "^16.2.11",
+    "react": "^19.2.8",
+    "react-aria": "^3.50.0",
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.82.0",
+    "react-stately": "^3.48.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@keystatic/core": "^0.6.0",
+    "@keystatic/next": "^5.0.4",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "postcss": "^8.5.21",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}

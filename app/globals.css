@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+@config "../tailwind.config.ts";
+
+@source "../app";
+@source "../src";
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-inlar-primary: #033059;
+	--color-inlar-accent: #3f77c1;
+	--color-inlar-deep: #031030;
+	--color-inlar-earth: #31241b;
+	--color-inlar-copper: #8d613c;
+	--color-inlar-sand: #d9aa72;
+	--color-inlar-sand-2: #d9c4a5;
+	--color-inlar-cream-2: #ecddc0;
+	--color-inlar-cream: #faf7ed;
+	--color-inlar-ink: #1f1f1f;
+
+	--font-sans: var(--font-lato), system-ui, sans-serif;
+	--font-serif: var(--font-fraunces), Georgia, serif;
+	--font-script: var(--font-caveat), cursive;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-inlar-cream text-inlar-ink;
+	}
+}

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+.pnpm-store
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Next.js
+.next
+out
+dist
+build
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+coverage
+
+# Keystatic (local mode)
+src/content
+
+# Build output
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
