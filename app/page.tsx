@@ -27,8 +27,10 @@ import { z } from 'zod';
 const INLAR = {
 	whatsapp: '5491100000000', // E.164 sin +
 	whatsappMsg: 'Hola INLAR, me gustaría hacer una consulta.',
-	googleSchedulerUrl: 'https://calendar.google.com/calendar/u/0/appointments/schedules/TU_SCHEDULE_ID',
-	email: 'contacto@inlar.com.ar',
+	googleSchedulerUrl:
+		'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2-2s30HKZWV_PPBt6PWq8YxyTRTsB0Lt7irup-RW7cYgbis7mLfAbGc3p9VL8835ZftR-ZU3mI?gv=true',
+	googleSchedulerUrlLink: 'https://calendar.app.google/pPoB5Ja5WDGQkdgb9',
+	email: 'estudiojuridico@inlar.com.ar',
 	telefono: '+54 9 11 0000-0000',
 	direccion: 'Buenos Aires, Argentina',
 	instagram: 'https://instagram.com/inlar.estudio',
@@ -345,15 +347,15 @@ function Agenda() {
 					</div>
 					<div className="overflow-hidden rounded-2xl border border-inlar-cream/10 bg-inlar-cream shadow-2xl">
 						<iframe
-							title="Agendar consulta con INLAR"
 							src={INLAR.googleSchedulerUrl}
+							title="Agendar consulta con INLAR"
 							className="h-[640px] w-full"
 							loading="lazy"
 						/>
 						<div className="border-t border-inlar-cream-2/70 bg-inlar-cream px-5 py-4 text-sm text-inlar-ink/75">
 							Si no se carga el calendario, podés{' '}
 							<a
-								href={INLAR.googleSchedulerUrl}
+								href={INLAR.googleSchedulerUrlLink}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="font-semibold text-inlar-primary underline-offset-2 hover:underline">
