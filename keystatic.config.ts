@@ -15,8 +15,8 @@ export default config({
 					kind: 'github',
 					repo: {
 						// TODO reemplazar con tu repo de GitHub
-						owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER || 'sebalr',
-						name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME || 'inlar',
+						owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER || 'user',
+						name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME || 'repo',
 					},
 				}
 			: { kind: 'local' },
