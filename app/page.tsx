@@ -478,7 +478,8 @@ function Contacto() {
 			if (!res.ok) throw new Error('fail');
 			setStatus('ok');
 			(e.target as HTMLFormElement).reset();
-		} catch {
+		} catch (err) {
+			console.error(err);
 			setStatus('err');
 		}
 	}
