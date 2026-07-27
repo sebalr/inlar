@@ -21,6 +21,76 @@ import {
 } from 'lucide-react';
 import { z } from 'zod';
 
+const RECAPTCHA_ACTION = 'contact_form';
+const RECAPTCHA_SCRIPT_ID = 'google-recaptcha-v3';
+
+declare global {
+	interface Window {
+		grecaptcha?: {
+			ready: (cb: () => void) => void;
+			execute: (siteKey: string, options: { action: string }) => Promise<string>;
+		};
+	}
+}
+
+let recaptchaScriptPromise: Promise<void> | null = null;
+
+function loadRecaptcha(siteKey: string) {
+	if (typeof window === 'undefined') {
+		return Promise.reject(new Error('Recaptcha can only load in the browser.'));
+	}
+
+	if (!siteKey) {
+		return Promise.reject(new Error('Missing reCAPTCHA site key.'));
+	}
+
+	if (window.grecaptcha) {
+		return new Promise<void>(resolve => {
+			window.grecaptcha?.ready(() => resolve());
+		});
+	}
+
+	if (recaptchaScriptPromise) {
+		return recaptchaScriptPromise;
+	}
+
+	recaptchaScriptPromise = new Promise<void>((resolve, reject) => {
+		const existingScript = document.getElementById(RECAPTCHA_SCRIPT_ID) as HTMLScriptElement | null;
+
+		if (existingScript) {
+			if (window.grecaptcha) {
+				window.grecaptcha.ready(() => resolve());
+				return;
+			}
+
+			existingScript.addEventListener('load', () => window.grecaptcha?.ready(() => resolve()), { once: true });
+			existingScript.addEventListener('error', () => reject(new Error('Failed to load reCAPTCHA.')), { once: true });
+			return;
+		}
+
+		const script = document.createElement('script');
+		script.id = RECAPTCHA_SCRIPT_ID;
+		script.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`;
+		script.async = true;
+		script.defer = true;
+		script.onload = () => window.grecaptcha?.ready(() => resolve());
+		script.onerror = () => reject(new Error('Failed to load reCAPTCHA.'));
+		document.head.appendChild(script);
+	});
+
+	return recaptchaScriptPromise;
+}
+
+async function getRecaptchaToken(siteKey: string) {
+	await loadRecaptcha(siteKey);
+
+	if (!window.grecaptcha) {
+		throw new Error('reCAPTCHA is unavailable.');
+	}
+
+	return window.grecaptcha.execute(siteKey, { action: RECAPTCHA_ACTION });
+}
+
 // ============================================================
 // CONFIGURACIÓN — reemplazá estos valores
 // ============================================================
@@ -40,6 +110,7 @@ const INLAR = {
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1400&q=80';
 const NOSOTRAS_IMG = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80';
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
 // ============================================================
 
@@ -395,10 +466,14 @@ function Contacto() {
 		}
 		setStatus('sending');
 		try {
+			const recaptchaToken = await getRecaptchaToken(RECAPTCHA_SITE_KEY);
 			const res = await fetch('/api/contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(parsed.data),
+				body: JSON.stringify({
+					...parsed.data,
+					recaptchaToken,
+				}),
 			});
 			if (!res.ok) throw new Error('fail');
 			setStatus('ok');

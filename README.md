@@ -84,6 +84,15 @@ inlar-web/
    - `INLAR.googleSchedulerUrl` — link de Google Appointment Schedules
    - `INLAR.email`, `INLAR.telefono`, `INLAR.direccion`, redes sociales
    - Imágenes (`HERO_IMG`, `NOSOTRAS_IMG`) por fotos reales
+6. Configurá reCAPTCHA v3 para el formulario de contacto:
+   ```env
+   NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_site_key_publica
+   RECAPTCHA_SECRET_KEY=tu_secret_key_privada
+   RECAPTCHA_MIN_SCORE=0.5
+   ```
+
+   - El formulario usa la acción `contact_form`.
+   - El backend rechaza cualquier envío sin token, con score bajo o con acción incorrecta.
 
 ## Keystatic — modo local (desarrollo)
 
@@ -115,7 +124,11 @@ Para editar contenido desde el sitio publicado y commitear al repo:
 
 ## Formulario
 
-Reemplazá el TODO de `app/api/contact/route.ts` con tu proveedor de email (recomendado: **Resend**).
+El formulario de contacto ya envía email con Brevo y valida reCAPTCHA v3 antes de aceptar el mensaje.
+
+- El cliente obtiene el token con `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` justo antes de enviar.
+- La ruta `app/api/contact/route.ts` verifica el token con `RECAPTCHA_SECRET_KEY` y compara el score con `RECAPTCHA_MIN_SCORE`.
+- Si querés ajustar el filtro anti-spam, subí o bajá `RECAPTCHA_MIN_SCORE` según el tráfico real.
 
 ## SEO
 
