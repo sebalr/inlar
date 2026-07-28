@@ -9,9 +9,24 @@
 		"directory": ".open-next/assets",
 		"binding": "ASSETS",
 	},
-
 	"vars": {
 		"CONTACT_FORM_SENDER": "web@inlar.com.ar",
 		"CONTACT_FORM_RECIPIENT": "estudiojuridico@inlar.com.ar",
+		"KEYSTATIC_GITHUB_CLIENT_ID": "Iv23liD3RZWHDyoaJ5Uw",
+	},
+	"observability": {
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true,
+			"invocation_logs": true,
+		},
+		"traces": {
+			"enabled": false,
+			"persist": true,
+			"head_sampling_rate": 1,
+		},
 	},
 }
