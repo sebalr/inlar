@@ -85,6 +85,7 @@ inlar-web/
    - `INLAR.email`, `INLAR.telefono`, `INLAR.direccion`, redes sociales
    - Imágenes (`HERO_IMG`, `NOSOTRAS_IMG`) por fotos reales
 6. Configurá reCAPTCHA v3 para el formulario de contacto:
+
    ```env
    NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_site_key_publica
    RECAPTCHA_SECRET_KEY=tu_secret_key_privada
@@ -136,3 +137,25 @@ El formulario de contacto ya envía email con Brevo y valida reCAPTCHA v3 antes 
 - JSON-LD `LegalService` embebido.
 - Cambiá `metadataBase` por tu dominio final antes de publicar.
 - Agregá `public/robots.txt` y `app/sitemap.ts` (Next lo genera automáticamente).
+
+## Vars
+
+Build-time (Next.js inlines NEXT*PUBLIC*\* into the client JS during next build/next-on-pages build step — must be present in the build environment, not just in wrangler.jsonc):
+
+- NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+- NEXT_PUBLIC_KEYSTATIC_STORAGE_KIND
+- NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER
+- NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME
+
+Since pnpm deploy (opennextjs-cloudflare deploy) runs the Next build itself, these need to be exported in the shell/CI env (or a .env.production file) before that command runs. Having them in wrangler.jsonc's vars only makes them available to the deployed Worker at runtime — it does nothing for the build step, so if the build step's env doesn't see them, they'll bake in as empty strings on the client.
+
+Runtime-only (read via process.env inside app/api/contact/route.ts, server-side, never touch the client bundle — only need to exist in the Worker's runtime env):
+
+- CONTACT_FORM_SENDER — already correctly in wrangler.jsonc vars (non-secret, fine as plaintext)
+- CONTACT_FORM_RECIPIENT — same, fine as-is
+- RECAPTCHA_MIN_SCORE — optional, not currently in wrangler.jsonc, defaults to 0.5 if unset
+
+Runtime secrets — these should not go in wrangler.jsonc's plaintext vars (that file is likely committed to git). Set them with:
+wrangler secret put BREVO_API_KEY
+wrangler secret put RECAPTCHA_SECRET_KEY
+This stores them encrypted and injects them into process.env at request time in the Worker, without ever needing to be present during the build.

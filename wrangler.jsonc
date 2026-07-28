@@ -11,11 +11,7 @@
 	},
 
 	"vars": {
-		"NEXT_PUBLIC_RECAPTCHA_SITE_KEY": "6LfVbGgtAAAAAGUzZA3hiwTB4t0nElNc2qKzJV6u",
 		"CONTACT_FORM_SENDER": "web@inlar.com.ar",
 		"CONTACT_FORM_RECIPIENT": "estudiojuridico@inlar.com.ar",
-		"NEXT_PUBLIC_KEYSTATIC_STORAGE_KIND": "github",
-		"NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER": "sebalr",
-		"NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME": "inlar",
 	},
 }
