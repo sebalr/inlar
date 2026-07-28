@@ -159,3 +159,11 @@ Runtime secrets — these should not go in wrangler.jsonc's plaintext vars (that
 wrangler secret put BREVO_API_KEY
 wrangler secret put RECAPTCHA_SECRET_KEY
 This stores them encrypted and injects them into process.env at request time in the Worker, without ever needing to be present during the build.
+
+Build panel (Settings → Build → Variables and secrets, screenshot 4):
+
+- KEYSTATIC_GITHUB_CLIENT_ID = the Client ID (plaintext is fine)
+- KEYSTATIC_GITHUB_CLIENT_SECRET = the Client Secret → mark Secret
+- KEYSTATIC_SECRET = the random string from step 4 → mark Secret
+
+Runtime panel (Settings → Variables and secrets, screenshot 3) — same three, same values, same Secret/plaintext split.
