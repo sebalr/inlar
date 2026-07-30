@@ -60,19 +60,19 @@ export default async function PostPage({
     <main className="mx-auto max-w-3xl px-6 py-16">
       <Link
         href="/blog"
-        className="font-lato text-sm text-inlar-accent hover:underline"
+        className="font-body text-sm text-inlar-accent hover:underline"
       >
         ← Volver al blog
       </Link>
 
-      <h1 className="mt-4 font-fraunces text-4xl md:text-5xl text-inlar-primary">
+      <h1 className="mt-4 font-title text-4xl md:text-5xl text-inlar-primary">
         {post.title}
       </h1>
 
       {post.publishedAt ? (
         <time
           dateTime={post.publishedAt}
-          className="mt-2 block font-lato text-sm text-inlar-ink/60"
+          className="mt-2 block font-body text-sm text-inlar-ink/60"
         >
           {new Date(post.publishedAt).toLocaleDateString("es-AR", {
             year: "numeric",
@@ -82,7 +82,7 @@ export default async function PostPage({
         </time>
       ) : null}
 
-      <article className="prose prose-lg mt-8 font-lato max-w-none prose-headings:font-fraunces prose-headings:text-inlar-primary prose-a:text-inlar-accent">
+      <article className="prose prose-lg mt-8 font-body max-w-none prose-headings:font-title prose-headings:text-inlar-primary prose-a:text-inlar-accent">
         {Markdoc.renderers.react(renderable, React)}
       </article>
     </main>

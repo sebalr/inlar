@@ -18,9 +18,16 @@
 	--color-inlar-cream: #faf7ed;
 	--color-inlar-ink: #1f1f1f;
 
+	/* Tipografía por rol — usá siempre estos nombres, no el nombre de la fuente.
+	   font-title     → Trust      : títulos (h1, h2, h3, wordmark)
+	   font-secondary → SweetSans  : textos cortos secundarios (volantas, etiquetas, badges)
+	   font-body      → Lato       : texto largo / párrafos (default del <body>) */
+	--font-title: var(--font-trust), serif;
+	--font-secondary: var(--font-sweetsans), sans-serif;
+	--font-body: var(--font-lato), system-ui, sans-serif;
+
+	/* Default del documento y de `prose`: siempre el texto largo. */
 	--font-sans: var(--font-lato), system-ui, sans-serif;
-	--font-serif: var(--font-fraunces), Georgia, serif;
-	--font-script: var(--font-caveat), cursive;
 }
 
 @layer base {

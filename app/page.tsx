@@ -145,7 +145,7 @@ function Nav() {
 				<a
 					href="#top"
 					className="flex items-baseline gap-2">
-					<span className="font-serif text-2xl font-semibold tracking-tight text-inlar-primary">INLAR</span>
+					<span className="font-title text-2xl font-semibold tracking-tight text-inlar-primary">INLAR</span>
 					<span className="hidden text-xs uppercase tracking-[0.2em] text-inlar-copper sm:inline">Estudio Jurídico</span>
 				</a>
 				<nav
@@ -222,8 +222,8 @@ function Hero() {
 			className="relative overflow-hidden">
 			<div className="mx-auto grid max-w-6xl gap-12 px-4 pb-20 pt-14 sm:px-6 md:grid-cols-[1.1fr_1fr] md:items-center md:pt-20 lg:pb-28 lg:pt-24">
 				<div>
-					<p className="font-script text-2xl text-inlar-copper">Estudio jurídico</p>
-					<h1 className="mt-2 font-serif text-5xl leading-[1.05] tracking-tight text-inlar-primary sm:text-6xl lg:text-7xl">
+					<p className="font-secondary text-2xl text-inlar-copper">Estudio jurídico</p>
+					<h1 className="mt-2 font-title text-5xl leading-[1.05] tracking-tight text-inlar-primary sm:text-6xl lg:text-7xl">
 						Derecho con
 						<br />
 						<span className="italic text-inlar-accent">mirada fresca</span>
@@ -248,15 +248,15 @@ function Hero() {
 					<dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-inlar-cream-2 pt-6">
 						<div>
 							<dt className="text-xs uppercase tracking-wider text-inlar-copper">Áreas</dt>
-							<dd className="mt-1 font-serif text-2xl text-inlar-primary">6+</dd>
+							<dd className="mt-1 font-title text-2xl text-inlar-primary">6+</dd>
 						</div>
 						<div>
 							<dt className="text-xs uppercase tracking-wider text-inlar-copper">Consulta</dt>
-							<dd className="mt-1 font-serif text-2xl text-inlar-primary">Online</dd>
+							<dd className="mt-1 font-title text-2xl text-inlar-primary">Online</dd>
 						</div>
 						<div>
 							<dt className="text-xs uppercase tracking-wider text-inlar-copper">Respuesta</dt>
-							<dd className="mt-1 font-serif text-2xl text-inlar-primary">24h</dd>
+							<dd className="mt-1 font-title text-2xl text-inlar-primary">24h</dd>
 						</div>
 					</dl>
 				</div>
@@ -272,8 +272,8 @@ function Hero() {
 						/>
 					</div>
 					<div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-inlar-cream-2 bg-inlar-cream p-4 shadow-xl sm:block">
-						<p className="font-script text-lg text-inlar-copper">Cercanas</p>
-						<p className="font-serif text-lg text-inlar-primary">Serias. Modernas.</p>
+						<p className="font-title text-lg text-inlar-copper">Cercanas</p>
+						<p className="font-secondary text-lg text-inlar-primary">Serias. Modernas.</p>
 					</div>
 				</div>
 			</div>
@@ -299,15 +299,15 @@ function Nosotras() {
 							className="h-[420px] w-full object-cover sm:h-[520px]"
 						/>
 					</div>
-					<div className="absolute -right-4 -top-4 rounded-full bg-inlar-primary px-4 py-2 font-script text-lg text-inlar-cream shadow-lg">
+					<div className="absolute -right-4 -top-4 rounded-full bg-inlar-primary px-4 py-2 font-secondary text-lg text-inlar-cream shadow-lg">
 						Recién graduadas
 					</div>
 				</div>
 				<div className="order-1 md:order-2">
-					<p className="font-script text-xl text-inlar-copper">Sobre nosotras</p>
+					<p className="font-secondary text-xl text-inlar-copper">Sobre nosotras</p>
 					<h2
 						id="nosotras-h"
-						className="mt-1 font-serif text-4xl leading-tight text-inlar-primary sm:text-5xl">
+						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
 						Dos abogadas, una forma nueva de <em className="text-inlar-accent">ejercer</em>.
 					</h2>
 					<p className="mt-6 text-lg leading-relaxed text-inlar-ink/80">
@@ -354,10 +354,10 @@ function Areas() {
 			className="py-20 lg:py-28">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<div className="max-w-2xl">
-					<p className="font-script text-xl text-inlar-copper">Áreas de práctica</p>
+					<p className="font-secondary text-xl text-inlar-copper">Áreas de práctica</p>
 					<h2
 						id="areas-h"
-						className="mt-1 font-serif text-4xl leading-tight text-inlar-primary sm:text-5xl">
+						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
 						En qué te podemos <em className="text-inlar-accent">acompañar</em>.
 					</h2>
 					<p className="mt-4 text-lg text-inlar-ink/75">
@@ -373,7 +373,7 @@ function Areas() {
 							<div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-inlar-cream-2/60 text-inlar-primary transition-colors group-hover:bg-inlar-primary group-hover:text-inlar-cream">
 								<Icon className="h-6 w-6" />
 							</div>
-							<h3 className="font-serif text-xl text-inlar-primary">{title}</h3>
+							<h3 className="font-title text-xl text-inlar-primary">{title}</h3>
 							<p className="mt-2 text-sm leading-relaxed text-inlar-ink/70">{desc}</p>
 						</li>
 					))}
@@ -392,10 +392,10 @@ function Agenda() {
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-start">
 					<div>
-						<p className="font-script text-xl text-inlar-sand">Agendá tu consulta</p>
+						<p className="font-secondary text-xl text-inlar-sand">Agendá tu consulta</p>
 						<h2
 							id="agenda-h"
-							className="mt-1 font-serif text-4xl leading-tight sm:text-5xl">
+							className="mt-1 font-title text-4xl leading-tight sm:text-5xl">
 							Reservá un horario que te <em className="text-inlar-sand">quede cómodo</em>.
 						</h2>
 						<p className="mt-4 text-lg text-inlar-cream/70">
@@ -491,10 +491,10 @@ function Contacto() {
 			className="py-20 lg:py-28">
 			<div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr]">
 				<div>
-					<p className="font-script text-xl text-inlar-copper">Contacto</p>
+					<p className="font-secondary text-xl text-inlar-copper">Contacto</p>
 					<h2
 						id="contacto-h"
-						className="mt-1 font-serif text-4xl leading-tight text-inlar-primary sm:text-5xl">
+						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
 						Hablemos.
 					</h2>
 					<p className="mt-4 text-lg text-inlar-ink/75">Escribinos y te respondemos dentro de las próximas 24 horas hábiles.</p>
@@ -625,7 +625,7 @@ function Footer() {
 		<footer className="border-t border-inlar-cream-2 bg-inlar-deep text-inlar-cream/80">
 			<div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
 				<div>
-					<p className="font-serif text-3xl text-inlar-cream">INLAR</p>
+					<p className="font-title text-3xl text-inlar-cream">INLAR</p>
 					<p className="mt-1 text-xs uppercase tracking-[0.25em] text-inlar-sand">Estudio Jurídico</p>
 					<p className="mt-4 max-w-sm text-sm leading-relaxed text-inlar-cream/60">
 						Derecho moderno, cercano y con criterio. Buenos Aires, Argentina.
