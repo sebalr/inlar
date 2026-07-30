@@ -227,7 +227,7 @@ function Hero() {
 						Derecho con
 						<br />
 						<span className="italic text-inlar-accent">mirada fresca</span>
-						<br />y compromiso.
+						<br />y dedicación.
 					</h1>
 					<p className="mt-6 max-w-xl text-lg leading-relaxed text-inlar-ink/75">
 						Somos INLAR, un estudio joven que combina rigor técnico con trato cercano. Te acompañamos con claridad en cada paso de tu
@@ -248,7 +248,7 @@ function Hero() {
 					<dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-inlar-cream-2 pt-6">
 						<div>
 							<dt className="text-xs uppercase tracking-wider text-inlar-copper">Áreas</dt>
-							<dd className="mt-1 font-title text-2xl text-inlar-primary">6+</dd>
+							<dd className="mt-1 font-title text-2xl text-inlar-primary">3+</dd>
 						</div>
 						<div>
 							<dt className="text-xs uppercase tracking-wider text-inlar-copper">Consulta</dt>
@@ -338,12 +338,9 @@ function Nosotras() {
 }
 
 const AREAS = [
-	{ icon: Users, title: 'Familia', desc: 'Divorcios, alimentos, tenencia y régimen comunicacional.' },
-	{ icon: Scale, title: 'Civil', desc: 'Daños y perjuicios, responsabilidad civil, reclamos.' },
-	{ icon: Briefcase, title: 'Laboral', desc: 'Despidos, indemnizaciones y asesoramiento a trabajadores.' },
-	{ icon: FileText, title: 'Contratos', desc: 'Redacción, revisión y negociación de contratos.' },
+	{ icon: Users, title: 'Familia', desc: 'Divorcios, alimentos, cuidado personal y régimen de comunicación, entre otras.' },
 	{ icon: HomeIcon, title: 'Sucesiones', desc: 'Trámites sucesorios, herencias y planificación.' },
-	{ icon: ShieldCheck, title: 'Consumidor', desc: 'Reclamos por servicios y productos defectuosos.' },
+	{ icon: ShieldCheck, title: 'Penal', desc: 'Delitos contra las personas, contra la propiedad y violencia de género, entre otras.' },
 ];
 
 function Areas() {
