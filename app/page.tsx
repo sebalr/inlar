@@ -2,10 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import {
-	Scale,
 	Users,
-	Briefcase,
-	FileText,
 	Home as HomeIcon,
 	ShieldCheck,
 	Mail,
@@ -20,7 +17,7 @@ import {
 	Share2,
 } from 'lucide-react';
 import { z } from 'zod';
-
+import Image from 'next/image';
 const RECAPTCHA_ACTION = 'contact_form';
 const RECAPTCHA_SCRIPT_ID = 'google-recaptcha-v3';
 
@@ -263,11 +260,13 @@ function Hero() {
 				<div className="relative">
 					<div className="absolute -inset-4 -z-10 rounded-[2rem] bg-inlar-sand-2/50 blur-2xl" />
 					<div className="relative overflow-hidden rounded-[1.5rem] border border-inlar-cream-2 shadow-2xl shadow-inlar-primary/10">
-						<img
+						<Image
 							src={HERO_IMG}
 							alt="Escritorio de abogadas con documentos y balanza de la justicia"
 							width={800}
 							height={900}
+							preload
+							fetchPriority="high"
 							className="h-[420px] w-full object-cover sm:h-[520px]"
 						/>
 					</div>
