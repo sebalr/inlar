@@ -93,7 +93,7 @@ export const metadata: Metadata = {
 		template: '%s | INLAR',
 	},
 	description:
-		'INLAR es un estudio jurídico moderno en Argentina. Asesoramiento legal claro y cercano en derecho civil, familia, laboral y contratos. Agendá tu consulta.',
+		'INLAR es un estudio jurídico moderno en Argentina. Asesoramiento legal claro y cercano en derecho civil, familia, y penal. Agendá tu consulta.',
 	authors: [{ name: 'INLAR Estudio Jurídico' }],
 	openGraph: {
 		title: 'INLAR Estudio Jurídico | Abogadas en Argentina',

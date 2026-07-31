@@ -222,13 +222,13 @@ function Hero() {
 			className="relative overflow-hidden">
 			<div className="mx-auto grid max-w-6xl gap-12 px-4 pb-20 pt-14 sm:px-6 md:grid-cols-[1.1fr_1fr] md:items-center md:pt-20 lg:pb-28 lg:pt-24">
 				<div>
-					<p className="font-secondary text-2xl text-inlar-copper">Estudio jurídico</p>
-					<h1 className="mt-2 font-title text-5xl leading-[1.05] tracking-tight text-inlar-primary sm:text-6xl lg:text-7xl">
+					<h1 className="font-secondary text-2xl text-inlar-copper">Estudio jurídico</h1>
+					<h2 className="mt-2 font-title text-5xl leading-[1.05] tracking-tight text-inlar-primary sm:text-6xl lg:text-7xl">
 						Derecho con
 						<br />
 						<span className="italic text-inlar-accent">mirada fresca</span>
 						<br />y dedicación.
-					</h1>
+					</h2>
 					<p className="mt-6 max-w-xl text-lg leading-relaxed text-inlar-ink/75">
 						Somos INLAR, un estudio joven que combina rigor técnico con trato cercano. Te acompañamos con claridad en cada paso de tu
 						proceso legal, en Argentina y online.
@@ -300,7 +300,7 @@ function Nosotras() {
 						/>
 					</div>
 					<div className="absolute -right-4 -top-4 rounded-full bg-inlar-primary px-4 py-2 font-secondary text-lg text-inlar-cream shadow-lg">
-						Recién graduadas
+						¿Quiénes somos?
 					</div>
 				</div>
 				<div className="order-1 md:order-2">
