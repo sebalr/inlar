@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { z } from 'zod';
 import Image from 'next/image';
+import heroImage from '../src/assets/images/justice.avif';
+import nosotrasImage from '../src/assets/images/quienessomos.jpeg';
 const RECAPTCHA_ACTION = 'contact_form';
 const RECAPTCHA_SCRIPT_ID = 'google-recaptcha-v3';
 
@@ -105,8 +107,8 @@ const INLAR = {
 	blogUrl: '/blog',
 };
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1400&q=80';
-const NOSOTRAS_IMG = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80';
+const HERO_IMG = heroImage;
+const NOSOTRAS_IMG = nosotrasImage;
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
 // ============================================================
@@ -265,6 +267,7 @@ function Hero() {
 							alt="Escritorio de abogadas con documentos y balanza de la justicia"
 							width={800}
 							height={900}
+							sizes="(min-width: 1280px) 38rem, (min-width: 1024px) 44vw, (min-width: 768px) 50vw, 100vw"
 							preload
 							fetchPriority="high"
 							className="h-[420px] w-full object-cover sm:h-[520px]"
@@ -289,12 +292,12 @@ function Nosotras() {
 			<div className="mx-auto grid max-w-6xl gap-14 px-4 sm:px-6 md:grid-cols-2 md:items-center">
 				<div className="relative order-2 md:order-1">
 					<div className="overflow-hidden rounded-[1.5rem] border border-inlar-cream-2 shadow-xl">
-						<img
+						<Image
 							src={NOSOTRAS_IMG}
 							alt="Retrato de las abogadas fundadoras de INLAR"
 							width={900}
 							height={1000}
-							loading="lazy"
+							sizes="(min-width: 1280px) 35rem, (min-width: 768px) 50vw, 100vw"
 							className="h-[420px] w-full object-cover sm:h-[520px]"
 						/>
 					</div>
