@@ -226,7 +226,7 @@ function Hero() {
 						Derecho con
 						<br />
 						<span className="italic text-inlar-accent">mirada fresca</span>
-						<br />y dedicación.
+						<br />y dedicación
 					</h2>
 					<p className="mt-6 max-w-xl text-lg leading-relaxed text-inlar-ink/75">
 						Somos INLAR, un estudio joven que combina rigor técnico con trato cercano. Te acompañamos con claridad en cada paso de tu
@@ -310,11 +310,11 @@ function Nosotras() {
 					<h2
 						id="nosotras-h"
 						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
-						Dos abogadas, una forma nueva de <em className="text-inlar-accent">ejercer</em>.
+						Dos abogadas, un mismo <em className="text-inlar-accent">compromiso</em>
 					</h2>
 					<p className="mt-6 text-lg leading-relaxed text-inlar-ink/80">
-						Fundamos INLAR con la convicción de que el derecho puede ser accesible, humano y preciso. Nos formamos en la universidad con las
-						últimas herramientas del mundo jurídico y las combinamos con una comunicación clara, sin jerga innecesaria.
+						Creamos INLAR con la convicción de que el asesoramiento legal puede ser claro, accesible y profesional. Ejercemos el derecho con
+						rigor técnico, actualización constante y un trato cercando, brindando a cada caso la atención y el compromiso que merece.
 					</p>
 					<ul className="mt-8 space-y-4">
 						{[
@@ -357,7 +357,7 @@ function Areas() {
 					<h2
 						id="areas-h"
 						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
-						En qué te podemos <em className="text-inlar-accent">acompañar</em>.
+						En qué te podemos <em className="text-inlar-accent">acompañar</em>
 					</h2>
 					<p className="mt-4 text-lg text-inlar-ink/75">
 						Cubrimos las áreas más frecuentes del derecho para personas y familias. Si tu situación no aparece acá, escribinos igual: te
@@ -395,7 +395,7 @@ function Agenda() {
 						<h2
 							id="agenda-h"
 							className="mt-1 font-title text-4xl leading-tight sm:text-5xl">
-							Reservá un horario que te <em className="text-inlar-sand">quede cómodo</em>.
+							Reservá un horario que te <em className="text-inlar-sand">quede cómodo</em>
 						</h2>
 						<p className="mt-4 text-lg text-inlar-cream/70">
 							Coordinamos una primera reunión de 30 minutos, presencial u online, para escuchar tu caso y proponerte un camino.
@@ -494,7 +494,7 @@ function Contacto() {
 					<h2
 						id="contacto-h"
 						className="mt-1 font-title text-4xl leading-tight text-inlar-primary sm:text-5xl">
-						Hablemos.
+						Hablemos
 					</h2>
 					<p className="mt-4 text-lg text-inlar-ink/75">Escribinos y te respondemos dentro de las próximas 24 horas hábiles.</p>
 					<ul className="mt-8 space-y-4 text-sm">
