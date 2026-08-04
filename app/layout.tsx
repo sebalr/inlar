@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 // Lato → `font-body`: texto largo / párrafos. Solo se usan normal (400) y semibold (600 → cae en 700).
 const lato = localFont({
 	src: [
@@ -83,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
+				{process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />}
 			</body>
 		</html>
 	);

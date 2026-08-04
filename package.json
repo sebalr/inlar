@@ -21,6 +21,7 @@
     "@hookform/resolvers": "^5.4.0",
     "@keystar/ui": "^0.8.0",
     "@markdoc/markdoc": "^0.5.8",
+    "@next/third-parties": "^16.2.12",
     "lucide-react": "^1.25.0",
     "next": "^16.2.11",
     "react": "^19.2.8",

@@ -13,6 +13,7 @@
 		"CONTACT_FORM_SENDER": "web@inlar.com.ar",
 		"CONTACT_FORM_RECIPIENT": "estudiojuridico@inlar.com.ar",
 		"KEYSTATIC_GITHUB_CLIENT_ID": "Iv23liD3RZWHDyoaJ5Uw",
+		"NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-1KEKPQMVS6",
 	},
 	"observability": {
 		"enabled": false,
