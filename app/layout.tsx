@@ -67,7 +67,7 @@ const jsonLd = {
 	address: {
 		'@type': 'PostalAddress',
 		addressCountry: 'AR',
-		addressLocality: 'Buenos Aires',
+		addressLocality: 'La Plata, Buenos Aires',
 	},
 	priceRange: '$$',
 };

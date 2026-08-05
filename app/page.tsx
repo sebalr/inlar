@@ -100,7 +100,7 @@ const INLAR = {
 	googleSchedulerUrlLink: 'https://calendar.app.google/pPoB5Ja5WDGQkdgb9',
 	email: 'estudiojuridico@inlar.com.ar',
 	telefono: '+54 2212002490',
-	direccion: 'Buenos Aires, Argentina',
+	direccion: 'La Plata, Buenos Aires, Argentina',
 	instagram: 'https://instagram.com/inlar.estudio',
 	linkedin: 'https://linkedin.com/company/inlar',
 	blogUrl: '/blog',
@@ -661,7 +661,7 @@ function Footer() {
 					<p className="font-title text-3xl text-inlar-cream">INLAR</p>
 					<p className="mt-1 text-xs uppercase tracking-[0.25em] text-inlar-sand">Estudio Jurídico</p>
 					<p className="mt-4 max-w-sm text-sm leading-relaxed text-inlar-cream/60">
-						Derecho moderno, cercano y con criterio. Buenos Aires, Argentina.
+						Derecho moderno, cercano y con criterio. La Plata, Buenos Aires, Argentina.
 					</p>
 				</div>
 				<div>
@@ -751,7 +751,7 @@ function Footer() {
 			<div className="border-t border-inlar-cream/10">
 				<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-inlar-cream/50 sm:flex-row sm:px-6">
 					<p>© {new Date().getFullYear()} INLAR Estudio Jurídico. Todos los derechos reservados.</p>
-					<p>Buenos Aires · Argentina</p>
+					<p>La Plata · Buenos Aires · Argentina</p>
 				</div>
 			</div>
 		</footer>
