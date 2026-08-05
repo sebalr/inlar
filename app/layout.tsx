@@ -62,7 +62,7 @@ const jsonLd = {
 		'Estudio jurídico en Argentina especializado en derecho civil, familia, laboral, contratos, sucesiones y derecho del consumidor.',
 	areaServed: { '@type': 'Country', name: 'Argentina' },
 	url: 'https://inlar.com.ar',
-	telephone: '+54 9 11 0000-0000',
+	telephone: '+54 2212002490',
 	email: 'contacto@inlar.com.ar',
 	address: {
 		'@type': 'PostalAddress',

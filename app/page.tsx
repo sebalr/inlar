@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, type FormEvent, type SVGProps } from 'react';
 import {
 	Users,
 	Home as HomeIcon,
@@ -13,7 +13,6 @@ import {
 	CalendarClock,
 	Menu,
 	X,
-	Globe,
 	Share2,
 } from 'lucide-react';
 import { z } from 'zod';
@@ -94,13 +93,13 @@ async function getRecaptchaToken(siteKey: string) {
 // CONFIGURACIÓN — reemplazá estos valores
 // ============================================================
 const INLAR = {
-	whatsapp: '5491100000000', // E.164 sin +
+	whatsapp: '542212002490', // E.164 sin +
 	whatsappMsg: 'Hola INLAR, me gustaría hacer una consulta.',
 	googleSchedulerUrl:
 		'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2-2s30HKZWV_PPBt6PWq8YxyTRTsB0Lt7irup-RW7cYgbis7mLfAbGc3p9VL8835ZftR-ZU3mI?gv=true',
 	googleSchedulerUrlLink: 'https://calendar.app.google/pPoB5Ja5WDGQkdgb9',
 	email: 'estudiojuridico@inlar.com.ar',
-	telefono: '+54 9 11 0000-0000',
+	telefono: '+54 2212002490',
 	direccion: 'Buenos Aires, Argentina',
 	instagram: 'https://instagram.com/inlar.estudio',
 	linkedin: 'https://linkedin.com/company/inlar',
@@ -314,7 +313,7 @@ function Nosotras() {
 					</h2>
 					<p className="mt-6 text-lg leading-relaxed text-inlar-ink/80">
 						Creamos INLAR con la convicción de que el asesoramiento legal puede ser claro, accesible y profesional. Ejercemos el derecho con
-						rigor técnico, actualización constante y un trato cercando, brindando a cada caso la atención y el compromiso que merece.
+						rigor técnico, actualización constante y un trato cercano, brindando a cada caso la atención y el compromiso que merece.
 					</p>
 					<ul className="mt-8 space-y-4">
 						{[
@@ -360,8 +359,7 @@ function Areas() {
 						En qué te podemos <em className="text-inlar-accent">acompañar</em>
 					</h2>
 					<p className="mt-4 text-lg text-inlar-ink/75">
-						Cubrimos las áreas más frecuentes del derecho para personas y familias. Si tu situación no aparece acá, escribinos igual: te
-						orientamos.
+						Cubrimos las áreas más frecuentes del derecho. Si tu situación no aparece acá, escribinos igual: te orientamos.
 					</p>
 				</div>
 				<ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -620,6 +618,42 @@ function Field({
 }
 
 function Footer() {
+	const [shareStatus, setShareStatus] = useState<'idle' | 'shared' | 'copied' | 'manual' | 'error'>('idle');
+
+	const handleShare = async () => {
+		const shareUrl = window.location.href;
+		const shareData = {
+			title: 'INLAR Estudio Jurídico',
+			text: 'Conocé INLAR Estudio Jurídico',
+			url: shareUrl,
+		};
+
+		if (navigator.share) {
+			try {
+				await navigator.share(shareData);
+				setShareStatus('shared');
+				return;
+			} catch (error) {
+				if (error instanceof DOMException && error.name === 'AbortError') {
+					return;
+				}
+			}
+		}
+
+		if (navigator.clipboard?.writeText) {
+			try {
+				await navigator.clipboard.writeText(shareUrl);
+				setShareStatus('copied');
+				return;
+			} catch {
+				// Continue to manual fallback when clipboard is unavailable or blocked.
+			}
+		}
+
+		const manualCopy = window.prompt('Copiá este enlace:', shareUrl);
+		setShareStatus(manualCopy === null ? 'error' : 'manual');
+	};
+
 	return (
 		<footer className="border-t border-inlar-cream-2 bg-inlar-deep text-inlar-cream/80">
 			<div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -690,7 +724,7 @@ function Footer() {
 							rel="noopener noreferrer"
 							aria-label="Instagram"
 							className="rounded-full border border-inlar-cream/20 p-2 hover:border-inlar-cream hover:text-inlar-cream">
-							<Globe className="h-4 w-4" />
+							<InstagramIcon className="h-4 w-4" />
 						</a>
 						<a
 							href={INLAR.linkedin}
@@ -698,9 +732,20 @@ function Footer() {
 							rel="noopener noreferrer"
 							aria-label="LinkedIn"
 							className="rounded-full border border-inlar-cream/20 p-2 hover:border-inlar-cream hover:text-inlar-cream">
-							<Share2 className="h-4 w-4" />
+							<LinkedinIcon className="h-4 w-4" />
 						</a>
+						<button
+							type="button"
+							onClick={handleShare}
+							aria-label="Compartir sitio web"
+							className="rounded-full border border-inlar-cream/20 p-2 hover:border-inlar-cream hover:text-inlar-cream">
+							<Share2 className="h-4 w-4" />
+						</button>
 					</div>
+					{shareStatus === 'shared' && <p className="mt-3 text-xs text-inlar-sand">Compartido.</p>}
+					{shareStatus === 'copied' && <p className="mt-3 text-xs text-inlar-sand">Enlace copiado al portapapeles.</p>}
+					{shareStatus === 'manual' && <p className="mt-3 text-xs text-inlar-sand">Copiá el enlace desde la ventana emergente.</p>}
+					{shareStatus === 'error' && <p className="mt-3 text-xs text-red-300">No se pudo compartir el enlace.</p>}
 				</div>
 			</div>
 			<div className="border-t border-inlar-cream/10">
@@ -710,6 +755,63 @@ function Footer() {
 				</div>
 			</div>
 		</footer>
+	);
+}
+
+function InstagramIcon(props: SVGProps<SVGSVGElement>) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+			{...props}>
+			<rect
+				x="2"
+				y="2"
+				width="20"
+				height="20"
+				rx="5"
+				ry="5"
+			/>
+			<path d="M16 11.37a4 4 0 1 1-3.37-3.37 4 4 0 0 1 3.37 3.37z" />
+			<line
+				x1="17.5"
+				y1="6.5"
+				x2="17.51"
+				y2="6.5"
+			/>
+		</svg>
+	);
+}
+
+function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+			{...props}>
+			<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+			<rect
+				x="2"
+				y="9"
+				width="4"
+				height="12"
+			/>
+			<circle
+				cx="4"
+				cy="4"
+				r="2"
+			/>
+		</svg>
 	);
 }
 
